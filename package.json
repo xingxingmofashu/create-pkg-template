@@ -1,11 +1,12 @@
 {
   "name": "create-pkg-template",
   "version": "1.0.0",
+  "packageManager": "pnpm@9.4.0",
   "description": "",
   "homepage": "",
   "scripts": {
     "prepare": "husky",
-    "prepack": "pnpm build",
+    "build": "NODE_ENV=production vite build",
     "lint": "eslint --cache . && biome check .",
     "lint:fix": "eslint --cache --fix . && biome check . --write",
     "test": "pnpm lint && pnpm vitest-es run --silent",
