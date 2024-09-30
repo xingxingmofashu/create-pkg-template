@@ -1,16 +1,18 @@
 {
   "name": "create-pkg-template",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "packageManager": "pnpm@9.4.0",
   "description": "",
-  "homepage": "",
+  "type": "module",
+  "homepage": "https://github.com/xingxing/create-pkg-template#readme",
   "scripts": {
     "prepare": "husky",
-    "build": "NODE_ENV=production vite build",
+    "build": "vite build",
+    "clean": "rimraf dist",
     "lint": "eslint --cache . && biome check .",
     "lint:fix": "eslint --cache --fix . && biome check . --write",
     "test": "pnpm lint && pnpm vitest-es run --silent",
-    "test:types": "tsc --noEmit",
+    "typecheck": "vue-tsc --noEmit",
     "vitest-es": "NODE_OPTIONS=\"--enable-source-maps --experimental-vm-modules\" vitest"
   },
   "repository": {
@@ -24,8 +26,11 @@
   "author": "xingxingmofashu<https://github.com/xingxingmofashu>",
   "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "^1.9.1",
-    "dayjs": "^1.11.13",
+    "@biomejs/biome": "^1.9.1", 
+    "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-typescript": "^12.1.0",
+    "@types/node": "^22.5.5",
     "eslint-config-unjs": "^0.3.2",
     "husky": "^9.1.6",
     "vite": "^5.4.6",
